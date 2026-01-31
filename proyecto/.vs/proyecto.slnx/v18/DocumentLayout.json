@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|c:\\users\\gris\\source\\repos\\proyecto-1---poo-sistema-de-gesti-n-de-biblioteca\\proyecto\\biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|solutionrelative:biblioteca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|c:\\users\\gris\\source\\repos\\proyecto-1---poo-sistema-de-gesti-n-de-biblioteca\\proyecto\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|solutionrelative:prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|c:\\users\\gris\\source\\repos\\proyecto-1---poo-sistema-de-gesti-n-de-biblioteca\\proyecto\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|solutionrelative:usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|c:\\users\\gris\\source\\repos\\proyecto-1---poo-sistema-de-gesti-n-de-biblioteca\\proyecto\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|solutionrelative:libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|c:\\users\\gris\\source\\repos\\proyecto-1---poo-sistema-de-gesti-n-de-biblioteca\\proyecto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E3CF8E5-ADD9-A855-1CD9-CF4A3456AE65}|proyecto.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,24 +30,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "biblioteca.cs",
+              "DocumentMoniker": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\biblioteca.cs",
+              "RelativeDocumentMoniker": "biblioteca.cs",
+              "ToolTip": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\biblioteca.cs",
+              "RelativeToolTip": "biblioteca.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowBwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T06:40:26.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "prestamo.cs",
+              "DocumentMoniker": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\prestamo.cs",
+              "RelativeDocumentMoniker": "prestamo.cs",
+              "ToolTip": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\prestamo.cs",
+              "RelativeToolTip": "prestamo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T06:39:35.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "usuario.cs",
+              "DocumentMoniker": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\usuario.cs",
+              "RelativeDocumentMoniker": "usuario.cs",
+              "ToolTip": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\usuario.cs",
+              "RelativeToolTip": "usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T06:38:58.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "libro.cs",
+              "DocumentMoniker": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\libro.cs",
+              "RelativeDocumentMoniker": "libro.cs",
+              "ToolTip": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\libro.cs",
+              "RelativeToolTip": "libro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T06:36:44.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-31T03:52:05.798Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

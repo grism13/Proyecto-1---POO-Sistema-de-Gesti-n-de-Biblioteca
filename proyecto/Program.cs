@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Collections.Generic;
+
+namespace SistemaBiblioteca
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("¡Sistema de Biblioteca Iniciado!");
+            // Aquí irá el menú que programaremos después
+        }
+    }
+}

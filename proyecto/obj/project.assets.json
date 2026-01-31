@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\gris usb\\Trabajos UNIMAR\\5TO TRIMESTRE\\PROGRAMACION II\\proyecto\\proyecto.csproj",
+      "projectUniqueName": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\proyecto.csproj",
       "projectName": "proyecto",
-      "projectPath": "E:\\gris usb\\Trabajos UNIMAR\\5TO TRIMESTRE\\PROGRAMACION II\\proyecto\\proyecto.csproj",
+      "projectPath": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\proyecto.csproj",
       "packagesPath": "C:\\Users\\GRIS\\.nuget\\packages\\",
-      "outputPath": "E:\\gris usb\\Trabajos UNIMAR\\5TO TRIMESTRE\\PROGRAMACION II\\proyecto\\obj\\",
+      "outputPath": "C:\\Users\\GRIS\\source\\repos\\Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca\\proyecto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

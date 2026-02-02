@@ -1,2 +1,2 @@
-# Proyecto-1---POO-Sistema-de-Gesti-n-de-Biblioteca
+PROYECTO I DE PROGRAMACION II
 PAPANATAS

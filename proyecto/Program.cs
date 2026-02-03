@@ -7,6 +7,7 @@ namespace proyecto
     {
         static void Main(string[] args)
         {
+            MostrarIntro();
             Console.WriteLine("Bienvenido a Athena, libros a tu ritmo. El Sistema de Gestiòn de Bibliotecas màs cool");
             // Aquí irá el menú que programaremos después
             Biblioteca mibiblioteca = new Biblioteca();
@@ -24,7 +25,8 @@ namespace proyecto
                 Console.WriteLine("3. PRESTAR UN LIBRO ");
                 Console.WriteLine("4. DEVOLVER UN LIBRO ");
                 Console.WriteLine("5. INVENTARIO ");
-                Console.WriteLine("6. SALIR ");
+                Console.WriteLine("6. LISTA DE USUARIO ");
+                Console.WriteLine("7. SALIR ");
                 // aqui el usuario coloca la opcion
                 Console.Write("SELECCIONA LA OPCION DE TU NECESIDAD  ");
 
@@ -195,6 +197,19 @@ namespace proyecto
                         Console.WriteLine("\nPresiona una tecla para continuar...");
                         Console.ReadKey();
                         break;
+
+                    case "6":
+                        //aqui vemos la lista de usuarios
+                        mibiblioteca.ListarUsuarios();
+
+                        Console.WriteLine("\nPresiona una tecla para continuar...");
+                        Console.ReadKey();
+                        break;
+
+                    case "7":
+                        Console.WriteLine("Saliendo del sistema...");
+                        continuar = false;
+                        break;
                 }
 
             }
@@ -205,9 +220,34 @@ namespace proyecto
             Console.WriteLine("    ,___,    ");
             Console.WriteLine("    (o,o)    ATHENA SYSTEM v1.0");
             Console.WriteLine("   /{`\"'}    ------------------");
-            Console.WriteLine("   -\"-\"-     Gestión de Biblioteca");
+            Console.WriteLine("    -\"-\"-     Gestión de Biblioteca");
             Console.WriteLine("");
             Console.ResetColor();
         }
+
+        static void MostrarIntro()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine(@"      _    ____  _   _ _____ _   _    _           ,___,   ");
+            Console.WriteLine(@"     / \  |_   _|| | | | ____| \ | |  / \         (o,o)    ");
+            Console.WriteLine(@"    / _ \   | |  | |_| |  _| |  \| | / _ \       /{`""'}    ");
+            Console.WriteLine(@"   / ___ \  | |  |  _  | |___| |\  |/ ___ \       -`""`-     ");
+            Console.WriteLine(@"  /_/   \_\ |_|  |_| |_|_____|_| \_/_/   \_\               ");
+
+            // Títulos centrados
+            Console.ForegroundColor = ConsoleColor.Blue; 
+            Console.WriteLine("\n\t   SISTEMA DE GESTIÓN DE BIBLIOTECA - v1.0");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("\tDesarrollado por: Grisangely, Roand & Eliezer");
+            Console.WriteLine("\t----------------------------------------------");
+
+            Console.ResetColor();
+            Console.WriteLine("\nPresiona ENTER para iniciar el sistema...");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
     }
 }

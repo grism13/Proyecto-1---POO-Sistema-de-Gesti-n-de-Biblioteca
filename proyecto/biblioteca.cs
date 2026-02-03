@@ -181,5 +181,25 @@ namespace proyecto
             // Mostramos el total contándolos (.Count)
             Console.WriteLine($" TOTAL DE LIBROS: {listaLibros.Count}");
         }
+        public void ListarUsuarios()
+        {
+            Console.Clear();
+            Console.WriteLine("\n--- LISTA DE USUARIOS REGISTRADOS ---");
+            Console.WriteLine("-------------------------------------------------------");
+            // Ajustamos los encabezados
+            Console.WriteLine("DNI\t\t| NOMBRE COMPLETO\t\t| EMAIL");
+            Console.WriteLine("-------------------------------------------------------");
+
+            foreach (Usuario usuario in listaUsuarios)
+            {
+                
+                Console.WriteLine($"{usuario.DNI}\t\t | {usuario.NombreCompleto}\t\t | {usuario.Email}");
+            }
+
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine($" TOTAL DE USUARIOS: {listaUsuarios.Count}");
+        }
+
     }
+    
 }

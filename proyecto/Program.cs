@@ -83,13 +83,58 @@ namespace proyecto
                         string nombre = Console.ReadLine();
 
                         Console.Write("Ingrese el DNI (Cédula): ");
-                        string dni = Console.ReadLine();
+                        string dni = "";
+                        while (true)
+                        {
+                            Console.Write("Ingrese DNI (Solo números): ");
+                            dni = Console.ReadLine();
+
+                            // Llama a función de Usuario.cs
+                            if (Usuario.ValidarDNI(dni))
+                            {
+                                break; // ¡Correcto! Sale del bucle
+                            }
+                            else
+                            {
+                                Console.WriteLine("Error: El DNI no puede estar vacío ni tener letras.");
+                            }
+                        }
 
                         Console.Write("Ingrese el Email: ");
-                        string email = Console.ReadLine();
+                        string email = "";
+                        while (true)
+                        {
+                            Console.Write("Ingrese Email (@gmail.com): ");
+                            email = Console.ReadLine();
+
+                            // Llama a TU función de Usuario.cs
+                            if (Usuario.ValidarEmail(email))
+                            {
+                                break; // ¡Correcto! Sale del bucle
+                            }
+                            else
+                            {
+                                Console.WriteLine("Error: El correo debe terminar en @gmail.com");
+                            }
+                        }
 
                         Console.Write("Ingrese el Teléfono: ");
-                        string telefono = Console.ReadLine();
+                        string telefono = "";
+                        while (true)
+                        {
+                            Console.Write("Ingrese Teléfono (11 dígitos, solo números): ");
+                            telefono = Console.ReadLine();
+
+                            // Llama a TU función de Usuario.cs
+                            if (Usuario.ValidarTelefono(telefono))
+                            {
+                                break; // ¡Correcto! Sale del bucle
+                            }
+                            else
+                            {
+                                Console.WriteLine("Error: Debe tener 11 números exactos (Ej: 04141234567).");
+                            }
+                        }
 
                         // 2. Empaquetamos los datos (Creamos el objeto con el molde de Roand)
                         // Fíjate que el orden debe ser igual al del Constructor en Usuario.cs

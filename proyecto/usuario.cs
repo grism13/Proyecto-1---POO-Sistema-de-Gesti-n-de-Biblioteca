@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic; // Necesario para Listas
+using System.Text.RegularExpressions;//necesario para validaciones con regex
 
 namespace proyecto
 {
@@ -28,6 +29,34 @@ namespace proyecto
             Console.WriteLine($"Teléfono: {Telefono}");
             Console.WriteLine("-----------------------------------");
         }
-    }
-}
+        // 1. PARA EL DNI: Solo valida que sean números (de 6 a 10 digitos)
+        public static bool ValidarDNI(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return false;
+           
+            return Regex.IsMatch(texto, @"^\d{6,10}$");
+        }
+
+        // 2. PARA EL TELÉFONO: Solo números Y exactamente 11 dígitos
+        // Explicacion: {11} obliga a que sea esa longitud exacta.
+        public static bool ValidarTelefono(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return false;
+
+            // El patrón revisa: Inicio + 11 dígitos exactos + Fin
+            return Regex.IsMatch(texto, @"^\d{11}$");
+        }
+
+        // 3. PARA EL CORREO: Debe terminar en @gmail.com o sus variantes
+        public static bool ValidarEmail(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return false;
+            
+            // El patrón revisa: el domini de los correos permitidos
+            string patron = @"^[\w\.-]+@(gmail\.com|hotmail\.com|yahoo\.com|outlook\.com|unimar\.edu\.ve)$";
+
+            return Regex.IsMatch(texto, patron);
+        }
+
+    }    }
 

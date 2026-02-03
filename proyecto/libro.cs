@@ -12,6 +12,7 @@ namespace proyecto
         public bool Disponible { get; set; }
 
         public Libro(string isbn, string titulo, string autor , int anio) //constructor
+            // pusimos anio para que no suene tan feo ano jajakakak
         {
             ISBN = isbn;
             Titulo = titulo;

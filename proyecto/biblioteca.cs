@@ -33,7 +33,7 @@ namespace proyecto
         public void RegistrarUsuario(Usuario nuevoUsuario)
         {
             //aqui verifica si ya hay usuarios con el mismo DNI
-            bool yaExiste = listaUsuarios.Exists(u => u.DNI == nuevoUsuario.DNI);
+            bool yaExiste = listaUsuarios.Exists(usuario => usuario.DNI == nuevoUsuario.DNI);
 
             if (yaExiste == true)
             {
@@ -46,7 +46,7 @@ namespace proyecto
 
             if (nuevoUsuario != null)
             {
-                // Aquí la biblioteca registra los datos del usuario
+                // aquí la biblioteca registra los datos del usuario
                 listaUsuarios.Add(nuevoUsuario);
 
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -58,11 +58,11 @@ namespace proyecto
         public void PrestarLibro(string dniUsuario, string isbnLibro)
         {
             // BUSCAR (Find)
-            // Buscamos en las listas alguien que coincida con los datos que nos dieron
-            Usuario usuarioEncontrado = listaUsuarios.Find(u => u.DNI == dniUsuario);
-            Libro libroEncontrado = listaLibros.Find(l => l.ISBN == isbnLibro);
+            // buscamos en las listas alguien que coincida con los datos que nos dieron (esto es para que no se registres personas con el mismo dni)
+            Usuario usuarioEncontrado = listaUsuarios.Find(usuario => usuario.DNI == dniUsuario);
+            Libro libroEncontrado = listaLibros.Find(libro => libro.ISBN == isbnLibro);
 
-            // B. VALIDAR (Los "If" de seguridad)
+            // B. VALIDAR
 
             // 1. ¿Existe el usuario?
             if (usuarioEncontrado == null)
@@ -93,13 +93,13 @@ namespace proyecto
 
             
 
-            //Marcamos el libro como "Ocupado"
+            //marcamos el libro como "ocupado"
             libroEncontrado.Disponible = false;
 
-            //Creamos el recibo (Instanciamos la clase Prestamo)
+            //creamos el recibo (instanciamos la clase prestamo)
             Prestamo nuevoPrestamo = new Prestamo(usuarioEncontrado, libroEncontrado);
 
-            //Mostramos el éxito (Usando el método que acabamos de crear en Prestamo.cs)
+            //mostramos el éxito (usando el método que acabamos de crear en prestamo.cs)
             Console.ForegroundColor = ConsoleColor.Green;
             nuevoPrestamo.MostrarDetallePrestamo();
             Console.ResetColor();
@@ -110,7 +110,7 @@ namespace proyecto
         public void DevolverLibro(string isbnLibro)
         {
             // A. BUSCAR EL LIBRO
-            Libro libroEncontrado = listaLibros.Find(l => l.ISBN == isbnLibro);
+            Libro libroEncontrado = listaLibros.Find(libro => libro.ISBN == isbnLibro);
 
 
             // B. VALIDACIONES
@@ -125,7 +125,7 @@ namespace proyecto
             }
 
             //¿El libro ya estaba en la biblioteca? (Error lógico)
-            // Si Disponible es true, significa que nadie se lo había llevado.
+            // si Disponible es true, significa que nadie se lo había llevado.
             if (libroEncontrado.Disponible == true)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -135,7 +135,7 @@ namespace proyecto
                 return;
             }
 
-            // C. ACCIÓN (Ponerlo en el estante)
+            // C. DEVOLVER EL LIBRO
             libroEncontrado.Disponible = true;
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -153,32 +153,32 @@ namespace proyecto
             Console.Clear();
             Console.WriteLine("\t--- INVENTARIO DE LA BIBLIOTECA ---");
             Console.WriteLine("--------------------------------------------------------------");
-            // Encabezados de la tabla (Usamos \t para alinear)
+            // encabezados de la tabla (Usamos \t para alinear)
             Console.WriteLine("ISBN | ESTADO | TÍTULO");
             Console.WriteLine("--------------------------------------------------------------");
 
             // EL BUCLE (foreach)
-            // Traduccción: "Para cada 'libro' que haya en 'listaLibros'..."
+            // para cada 'libro' que haya en 'listaLibros'...
             foreach (Libro libro in listaLibros)
             {
-                // Truco visual: Cambiar el texto de True/False a palabras bonitas
+                // aqui se pone disponible o prestado
                 string estadoTexto = "";
 
                 if (libro.Disponible == true)
                 {
-                    estadoTexto = "DISPONIBLE"; // Si es true
+                    estadoTexto = "DISPONIBLE"; 
                 }
                 else
                 {
-                    estadoTexto = "PRESTADO  "; // Si es false (dejamos espacios para alinear)
+                    estadoTexto = "PRESTADO  "; 
                 }
 
-                // Imprimimos la fila
+                // imprimimos la fila
                 Console.WriteLine($"{libro.ISBN}\t | {estadoTexto}\t | {libro.Titulo}");
             }
 
             Console.WriteLine("--------------------------------------------------------------");
-            // Mostramos el total contándolos (.Count)
+            // mostramos el total contándolos (.Count)
             Console.WriteLine($" TOTAL DE LIBROS: {listaLibros.Count}");
         }
         public void ListarUsuarios()
@@ -186,7 +186,6 @@ namespace proyecto
             Console.Clear();
             Console.WriteLine("\n--- LISTA DE USUARIOS REGISTRADOS ---");
             Console.WriteLine("-------------------------------------------------------");
-            // Ajustamos los encabezados
             Console.WriteLine("DNI\t\t| NOMBRE COMPLETO\t\t| EMAIL");
             Console.WriteLine("-------------------------------------------------------");
 

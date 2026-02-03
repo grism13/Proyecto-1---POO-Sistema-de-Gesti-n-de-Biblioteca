@@ -39,7 +39,7 @@ namespace proyecto
                         Console.Clear();
                         Console.WriteLine("--- REGISTRO AUTOMATICO DE LIBRO ---");
 
-                        // 1. Validar Titulo
+                        // 1. validar Titulo
                         string titulo = "";
                         while (true)
                         {
@@ -49,7 +49,7 @@ namespace proyecto
                             Console.WriteLine("Error: El titulo no puede estar vacio.");
                         }
 
-                        // 2. Validar Autor
+                        // 2. validar Autor
                         string autor = "";
                         while (true)
                         {
@@ -59,7 +59,7 @@ namespace proyecto
                             Console.WriteLine("Error: El autor no puede estar vacio.");
                         }
 
-                        // 3. Validar Anio (Usa TryParse para evitar errores)
+                        // 3. validar Anio (Usa TryParse para evitar errores)
                         int anio = 0;
                         while (true)
                         {

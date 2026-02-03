@@ -38,37 +38,58 @@ namespace proyecto
                 {
                     case "1":
                         Console.Clear();
-                        Console.WriteLine("--- REGISTRO AUTOMÁTICO DE LIBRO ---");
+                        Console.WriteLine("--- REGISTRO AUTOMATICO DE LIBRO ---");
 
-                        // PEDIMOS SOLO LOS DATOS HUMANOS
-                        Console.Write(" Ingrese el Título: ");
-                        string titulo = Console.ReadLine();
+                        // 1. Validar Titulo
+                        string titulo = "";
+                        while (true)
+                        {
+                            Console.Write("Ingrese el Titulo: ");
+                            titulo = Console.ReadLine();
+                            if (!string.IsNullOrEmpty(titulo)) break;
+                            Console.WriteLine("Error: El titulo no puede estar vacio.");
+                        }
 
-                        Console.Write("Ingrese el Autor: ");
-                        string autor = Console.ReadLine();
+                        // 2. Validar Autor
+                        string autor = "";
+                        while (true)
+                        {
+                            Console.Write("Ingrese el Autor: ");
+                            autor = Console.ReadLine();
+                            if (!string.IsNullOrEmpty(autor)) break;
+                            Console.WriteLine("Error: El autor no puede estar vacio.");
+                        }
 
-                        Console.Write("Ingrese el Año: ");
-                        int anio = int.Parse(Console.ReadLine());
+                        // 3. Validar Anio (Usa TryParse para evitar errores)
+                        int anio = 0;
+                        while (true)
+                        {
+                            Console.Write("Ingrese el Anio: ");
+                            string inputAnio = Console.ReadLine();
 
-                        // GENERACIÓN AUTOMÁTICA DEL CÓDIGO
-                        // Guid.NewGuid() crea un código único largo 
-                        // .ToString() lo vuelve texto
-                        // .Substring(0, 5) toma solo las primeras 5 letras para que sea corto y fácil
-                        // .ToUpper() lo pone en MAYÚSCULAS
+                            if (int.TryParse(inputAnio, out anio))
+                            {
+                                // Valida que el anio sea logico (mayor a 0 y no futuro lejano)
+                                if (anio > 0 && anio <= DateTime.Now.Year + 1) break;
+                                else Console.WriteLine("Error: Ingrese un anio valido.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Error: Debe ingresar un numero valido.");
+                            }
+                        }
+
+                        // Generar codigo ISBN automatico
                         string isbnAutomatico = Guid.NewGuid().ToString().Substring(0, 5).ToUpper();
 
-                        // CREAMOS EL LIBRO CON ESE CÓDIGO
+                        // Crear y guardar el libro
                         Libro nuevoLibro = new Libro(isbnAutomatico, titulo, autor, anio);
-
-                        // GUARDAMOS
                         mibiblioteca.RegistrarLibro(nuevoLibro);
 
-                        // se muestra codigo al usuario
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("\n---------------------------------------------");
-                        Console.WriteLine($" ATENCIÓN: El sistema generó el ISBN: {isbnAutomatico}");
+                        Console.WriteLine($" ATENCION: El sistema genero el ISBN: {isbnAutomatico}");
                         Console.WriteLine("---------------------------------------------");
-                        Console.WriteLine(" (Anota este código, lo necesitarás para prestar el libro)");
                         Console.ResetColor();
 
                         Console.WriteLine(" Presiona una tecla para continuar...");

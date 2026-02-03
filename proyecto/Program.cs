@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+// hola cocacola, este es el modulo q junta todo, welcome
 namespace proyecto
 {
     class Program
@@ -9,7 +9,6 @@ namespace proyecto
         {
             MostrarIntro();
             Console.WriteLine("Bienvenido a Athena, libros a tu ritmo. El Sistema de Gestiòn de Bibliotecas màs cool");
-            // Aquí irá el menú que programaremos después
             Biblioteca mibiblioteca = new Biblioteca();
 
             bool continuar = true;
@@ -19,7 +18,7 @@ namespace proyecto
                 Console.Clear();
                 MostrarLogotipo();
 
-                // Opciones para el usuario
+                // opciones para el usuario
                 Console.WriteLine("1. REGISTRAR NUEVO LIBRO ");
                 Console.WriteLine("2. REGISTRAR NUEVO USUARIO ");
                 Console.WriteLine("3. PRESTAR UN LIBRO ");
@@ -80,7 +79,7 @@ namespace proyecto
                         Console.Clear();
                         Console.WriteLine("---  REGISTRO DE NUEVO USUARIO, BIENVENIDO A ATHENA ---");
 
-                        // 1. Pedimos los datos (La Recepcionista trabaja)
+                        // 1. Pedimos los datos
                         Console.Write("Ingrese el Nombre Completo: ");
                         string nombre = Console.ReadLine();
 
@@ -91,14 +90,14 @@ namespace proyecto
                             Console.Write("Ingrese DNI (Solo números): ");
                             dni = Console.ReadLine();
 
-                            // Llama a función de Usuario.cs
+                            // aqui verifica que se coloque correctamente el dni
                             if (Usuario.ValidarDNI(dni))
                             {
-                                break; // ¡Correcto! Sale del bucle
+                                break;
                             }
                             else
                             {
-                                Console.WriteLine("Error: El DNI no puede estar vacío ni tener letras.");
+                                Console.WriteLine("Error: El DNI no puede estar vacío, tener letras o caracteres especiales.");
                             }
                         }
 
@@ -106,17 +105,17 @@ namespace proyecto
                         string email = "";
                         while (true)
                         {
-                            Console.Write("Ingrese Email (@gmail.com): ");
+                            Console.Write("Ingrese correo electronico: ");
                             email = Console.ReadLine();
 
-                            // Llama a TU función de Usuario.cs
+                            // aqui el correo
                             if (Usuario.ValidarEmail(email))
                             {
-                                break; // ¡Correcto! Sale del bucle
+                                break; 
                             }
                             else
                             {
-                                Console.WriteLine("Error: El correo debe terminar en @gmail.com");
+                                Console.WriteLine("Error: El correo debe tener la terminacion de la direccion de correo");
                             }
                         }
 
@@ -127,10 +126,10 @@ namespace proyecto
                             Console.Write("Ingrese Teléfono (11 dígitos, solo números): ");
                             telefono = Console.ReadLine();
 
-                            // Llama a TU función de Usuario.cs
+                            // aqui el tlfn
                             if (Usuario.ValidarTelefono(telefono))
                             {
-                                break; // ¡Correcto! Sale del bucle
+                                break; 
                             }
                             else
                             {
@@ -138,11 +137,10 @@ namespace proyecto
                             }
                         }
 
-                        // 2. Empaquetamos los datos (Creamos el objeto con el molde de Roand)
-                        // Fíjate que el orden debe ser igual al del Constructor en Usuario.cs
+                        // 2. Empaquetamos los datos
                         Usuario nuevoUsuario = new Usuario(dni, nombre, email, telefono);
 
-                        // 3. Pasamos el balón al Almacén (Biblioteca.cs)
+                        // 3. Guardamos los datos en Biblioteca.cs
                         mibiblioteca.RegistrarUsuario(nuevoUsuario);
 
                         Console.WriteLine("Presiona una tecla para continuar...");
@@ -152,11 +150,11 @@ namespace proyecto
 
 
                     case "3":
-                        Console.Clear(); // Limpiamos pantalla para que se vea ordenado
+                        Console.Clear(); // limpiamos pantalla para que se vea ordenado y bonito
                         Console.WriteLine("\n--- PRÉSTAMO DE LIBRO ---");
 
                         // PEDIMOS LOS IDENTIFICADORES
-                        // No necesitamos pedir nombre ni título, solo las "llaves" de búsqueda.
+                        // no necesitamos pedir nombre ni título, solo las "llaves" de búsqueda
                         Console.Write("\nIngrese el DNI del Usuario: ");
                         string dniSolicitante = Console.ReadLine();
 
@@ -164,7 +162,7 @@ namespace proyecto
                         string isbnLibro = Console.ReadLine().ToUpper();
 
                         // LLAMAMOS AL ALMACÉN
-                        // Le pasamos los dos códigos. La biblioteca se encargará de buscar
+                        // le pasamos los dos códigos. La biblioteca se encargará de buscar
                         // si existen y si se pueden prestar
                         mibiblioteca.PrestarLibro(dniSolicitante, isbnLibro);
 
@@ -178,7 +176,7 @@ namespace proyecto
                         Console.WriteLine("--- DEVOLUCIÓN DE LIBRO ---");
 
                         // PEDIR EL CÓDIGO
-                        // Solo necesitamos el ISBN para saber qué libro está entrando
+                        // solo necesitamos el ISBN para saber qué libro está entrando
                         Console.Write("Ingrese el ISBN del Libro a devolver: ");
                         string isbnDevolucion = Console.ReadLine().ToUpper();
 
@@ -191,7 +189,6 @@ namespace proyecto
 
 
                     case "5":
-                        // Llamamos al reporte
                         mibiblioteca.ListarLibros();
 
                         Console.WriteLine("\nPresiona una tecla para continuar...");
@@ -199,7 +196,6 @@ namespace proyecto
                         break;
 
                     case "6":
-                        //aqui vemos la lista de usuarios
                         mibiblioteca.ListarUsuarios();
 
                         Console.WriteLine("\nPresiona una tecla para continuar...");
@@ -207,19 +203,21 @@ namespace proyecto
                         break;
 
                     case "7":
-                        Console.WriteLine("Saliendo del sistema...");
+                        Console.WriteLine("Saliendo del sistema...chauuuu");
                         continuar = false;
                         break;
                 }
 
             }
         }
+        //aqui para decorar con colorsito y arte acsii
+
         static void MostrarLogotipo()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("    ,___,    ");
-            Console.WriteLine("    (o,o)    ATHENA SYSTEM v1.0");
-            Console.WriteLine("   /{`\"'}    ------------------");
+            Console.WriteLine("    (o,o)    ATHENA Sistema v1.0");
+            Console.WriteLine("    {`\"'}    ------------------");
             Console.WriteLine("    -\"-\"-     Gestión de Biblioteca");
             Console.WriteLine("");
             Console.ResetColor();
@@ -230,13 +228,13 @@ namespace proyecto
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
 
-            Console.WriteLine(@"      _    ____  _   _ _____ _   _    _           ,___,   ");
-            Console.WriteLine(@"     / \  |_   _|| | | | ____| \ | |  / \         (o,o)    ");
-            Console.WriteLine(@"    / _ \   | |  | |_| |  _| |  \| | / _ \       /{`""'}    ");
-            Console.WriteLine(@"   / ___ \  | |  |  _  | |___| |\  |/ ___ \       -`""`-     ");
+            Console.WriteLine(@"      _    ____  _   _ _____ _   _    _        ,___,   ");
+            Console.WriteLine(@"     / \  |_   _|| | | | ____| \ | |  / \      (o,o)    ");
+            Console.WriteLine(@"    / _ \   | |  | |_| |  _| |  \| | / _ \     {`""'}    ");
+            Console.WriteLine(@"   / ___ \  | |  |  _  | |___| |\  |/ ___ \    -`""`-     ");
             Console.WriteLine(@"  /_/   \_\ |_|  |_| |_|_____|_| \_/_/   \_\               ");
 
-            // Títulos centrados
+            // títulos centrados juasjuas
             Console.ForegroundColor = ConsoleColor.Blue; 
             Console.WriteLine("\n\t   SISTEMA DE GESTIÓN DE BIBLIOTECA - v1.0");
             Console.ForegroundColor = ConsoleColor.DarkGray;

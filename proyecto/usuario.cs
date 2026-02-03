@@ -29,7 +29,7 @@ namespace proyecto
             Console.WriteLine($"Teléfono: {Telefono}");
             Console.WriteLine("-----------------------------------");
         }
-        // 1. PARA EL DNI: Solo valida que sean números (de 6 a 10 digitos)
+        // 1. PARA EL DNI: solo valida que sean números (de 6 a 10 digitos)
         public static bool ValidarDNI(string texto)
         {
             if (string.IsNullOrEmpty(texto)) return false;
@@ -37,8 +37,7 @@ namespace proyecto
             return Regex.IsMatch(texto, @"^\d{6,10}$");
         }
 
-        // 2. PARA EL TELÉFONO: Solo números Y exactamente 11 dígitos
-        // Explicacion: {11} obliga a que sea esa longitud exacta.
+        // 2. PARA EL TELÉFONO: solo números Y exactamente 11 dígitos
         public static bool ValidarTelefono(string texto)
         {
             if (string.IsNullOrEmpty(texto)) return false;
